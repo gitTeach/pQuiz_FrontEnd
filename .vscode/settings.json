@@ -1,8 +1,14 @@
 {
     "explorer.compactFolders": false,
     "cSpell.words": [
+        "Datos",
+        "Descripción",
+        "Generales",
         "Whitespaces",
+        "chartjs",
         "coreui",
-        "gtag"
+        "gtag",
+        "prepended",
+        "quizes"
     ]
 }
