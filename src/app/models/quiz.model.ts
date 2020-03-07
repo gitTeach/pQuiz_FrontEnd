@@ -1,3 +1,4 @@
+import { Question } from './question.model';
 
 
 
@@ -8,5 +9,6 @@ export class Quiz {
   dateCreation: Date;
   dateEnding: Date;
   status: string;
+  questions: Question[];
   quizId: number;
 }

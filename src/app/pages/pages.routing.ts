@@ -8,21 +8,10 @@ const RUTAS: Routes = [
   {
     path: '',
     data: {
-      title: 'Base'
+      title: 'Tests'
     },
     children: [
-      {
-        path: '',
-        redirectTo: 'tests'
-      },
-      {
-        path: 'tests',
-        component: QuizComponent,
-        data: {
-          title: 'Tests'
-        }
-      },
-      {
+       {
         path: 'builder',
         component: QuizBuilderComponent,
         data: {

@@ -1,0 +1,28 @@
+
+
+<div class="card">
+  <div *ngIf="question.status !== 'R'" class="card-header">
+    <i class="fa fa-question-circle"></i>
+    <div class="card-header-actions">
+      <label class="switch switch-sm switch-label switch-success">
+        <input type="checkbox" class="switch-input" checked>
+        <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+      </label>
+    </div>
+  </div>
+    <div class="card-body">
+        <form #form="ngForm" class="form-horizontal">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="description">Texto</label>
+                    <input [(ngModel)]="question.text"
+                    name="text"
+                    class="form-control"
+                    placeholder="Texto ¿? ..."
+                    type="text">
+            </div>
+
+          </div>
+        </form>
+    </div>
+</div>

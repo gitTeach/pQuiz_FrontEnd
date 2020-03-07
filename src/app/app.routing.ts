@@ -52,7 +52,7 @@ export const routes: Routes = [
            },
            children: [
              {
-               path: 'tests',
+               path: '',
                loadChildren: () =>
                  import('./pages/pages.module').then(m => m.PagesModule)
              },

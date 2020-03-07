@@ -1,3 +1,4 @@
+import { PagesModule } from './pages/pages.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -54,7 +55,8 @@ import { ChartsModule } from 'ng2-charts';
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    PagesModule
   ],
   declarations: [
     AppComponent,

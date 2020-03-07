@@ -1,4 +1,5 @@
 <div class="card">
+  <form class="form-horizontal">
     <div class="card-header">
         <i class="fa fa-edit"></i>Constructor de Tests
         <div class="card-header-actions">
@@ -9,7 +10,6 @@
         </div>
     </div>
     <div class="card-body">
-        <form class="form-horizontal">
             <div class="form-group">
                 <div class="controls">
                     <input class="form-control form-control-lg" size="20" placeholder="Título" type="text">
@@ -20,7 +20,20 @@
                     <input class="form-control form-control" placeholder="Descripción" type="text">
                 </div>
             </div>
+            <hr>
+            <div *ngFor="let question of questions">
+                <app-question [question]="question" >
+
+                </app-question>
+            </div>
+            <hr>
+          </div>
+          <div class="card-footer">
+            <div class="row">
+              <button (click)="addQuestion()" class="btn btn-ghost-primary btn-md">
+                <i class="fa fa-plus"></i> Agregar pregunta<strong>¿?</strong>
+              </button>
+            </div>
+          </div>
         </form>
-    </div>
-    <div class="div"></div>
 </div>

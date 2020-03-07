@@ -1,3 +1,6 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { QuestionComponent } from './question/question.component';
+import { CommonModule } from '@angular/common';
 import { PagesRoutingModule } from './pages.routing';
 import { NgModule } from '@angular/core';
 
@@ -7,11 +10,15 @@ import { QuizBuilderComponent } from './quiz-builder/quiz-builder.component';
 
 @NgModule({
   imports: [
-    PagesRoutingModule
+    CommonModule,
+    PagesRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     QuizComponent,
-    QuizBuilderComponent
+    QuizBuilderComponent,
+    QuestionComponent
   ]
 })
 export class PagesModule { }
