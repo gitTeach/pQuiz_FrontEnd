@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 
 import { QuizComponent } from './quiz/quiz.component';
 import { QuizBuilderComponent } from './quiz-builder/quiz-builder.component';
+import { QuestionOptionComponent } from './question-option/question-option.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { QuizBuilderComponent } from './quiz-builder/quiz-builder.component';
   declarations: [
     QuizComponent,
     QuizBuilderComponent,
-    QuestionComponent
+    QuestionComponent,
+    QuestionOptionComponent
   ]
 })
 export class PagesModule { }

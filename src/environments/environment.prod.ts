@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  urlApi: 'https://quizeduapi.azurewebsites.net/api/'
 };

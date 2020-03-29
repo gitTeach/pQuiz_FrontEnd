@@ -1,0 +1,31 @@
+
+<div *ngIf="qOption.typeOpt===1" class="form-check">
+  <input class="form-check-input" type="checkbox" value="" [id]="optionIdStr">
+  <input class="form-control" type="text" [(ngModel)]="qOption.texto">
+</div>
+
+<div *ngIf="qOption.typeOpt===2" class="form-check">
+  <input class="form-check-input" type="radio" value="" id="option2">
+  <label class="form-check-label" [for]="optionIdStr">
+    Default radio
+  </label>
+</div>
+
+<div *ngIf="qOption.typeOpt===3" class="form-check">
+  <input class="form-check-input" type="checkbox" value="" [id]="optionIdStr">
+ </div>
+
+<div *ngIf="qOption.typeOpt===4" class="form-check">
+  <input class="form-check-input" type="checkbox" value="" [id]="optionIdStr">
+  <label class="form-check-label" [for]="optionIdStr">
+    Default checkbox
+  </label>
+</div>
+
+<div *ngIf="qOption.typeOpt===5" class="form-check">
+  <input class="form-check-input" type="checkbox" value="" [id]="optionIdStr">
+  <label class="form-check-label" [for]="optionIdStr">
+    Default checkbox
+  </label>
+</div>
+

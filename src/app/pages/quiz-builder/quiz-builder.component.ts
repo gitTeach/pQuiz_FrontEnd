@@ -35,7 +35,6 @@ export class QuizBuilderComponent implements OnInit {
 
   addQuestion() {
     this.questions.push( new Question());
-    console.log(this.questions);
   }
 
 }

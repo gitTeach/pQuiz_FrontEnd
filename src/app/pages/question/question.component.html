@@ -1,5 +1,3 @@
-
-
 <div class="card">
   <div *ngIf="question.status !== 'R'" class="card-header">
     <i class="fa fa-question-circle"></i>
@@ -10,19 +8,49 @@
       </label>
     </div>
   </div>
-    <div class="card-body">
-        <form #form="ngForm" class="form-horizontal">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="description">Texto</label>
-                    <input [(ngModel)]="question.text"
-                    name="text"
-                    class="form-control"
-                    placeholder="Texto ¿? ..."
-                    type="text">
-            </div>
+  <div class="card-body">
+    <form #form="ngForm" class="form-horizontal">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="description">Texto</label>
+          <input [(ngModel)]="question.text" name="text" class="form-control"
+          placeholder="Texto ¿? ..." type="text">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="tipo" >Tipo de Pregunta</label>
+          <select id="tipoPregunta"
+                  [(ngModel)]="question.questionTypeId"
+                  name="questionTypeId"
+                  class="form-control"
+                  aria-placeholder="Tipo de Pregunta"
+                  (change)="typeChanged($event)">
+            <option value="1">Selección multiple</option>
+            <option value="2">Selección única</option>
+            <option value="3">Texto Libre</option>
+            <option value="4">Escala</option>
+            <option value="5">Imagen</option>
+          </select>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="instruccionesPregunta">Instruciones</label>
+          <input [(ngModel)]="question.instructions" name="instructions" class="form-control"
+           placeholder="Intrucciones" type="text">
+        </div>
 
-          </div>
-        </form>
-    </div>
+        <div class="form-group col-md-12">
+          <label for="opcionesPregunta">Opciones</label>
+          <app-question-option *ngFor="let opt of options; let idx = index" [qOption]="opt"
+          [optIndex]="idx"></app-question-option>
+
+        </div>
+
+        <div *ngIf="question.questionTypeId!==3" class="form-group col-md-1">
+          <button class="btn btn-success" (click)="addOption()" ><i class="fa fa-plus"></i></button>
+        </div>
+
+
+
+      </div>
+    </form>
+  </div>
 </div>
