@@ -1,12 +1,12 @@
 
 
 export class QuestionOption {
-  texto: string;
-  value: number;
-  isDefault: boolean;
-  optionOrder: number;
-  etiqueta: string;
-  questionId: number;
-  optionId: number;
+  id:	number;
+  idPregunta:	number;
+  texto:	string;
+  valor:	number;
+  esRespuestaDefecto: boolean;
+  ordenRespuesta:	number;
+  etiqueta:	string;
   typeOpt: number;
 }

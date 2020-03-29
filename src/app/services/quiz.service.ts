@@ -9,7 +9,7 @@ import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class QuizService {
   options = new Observable<QuestionOption[]>();
@@ -17,6 +17,17 @@ export class QuizService {
   quizes = new Observable<Quiz[]>();
 
   constructor(private http: HttpClient) {}
+
+  CreateRegistro(obj: TriedQuiz) {
+    const url = `${environment.urlApi}/registro/save`;
+    return this.http.post(url, obj).pipe(
+      map((response: any) => {
+        if (response.ok) {
+          return response.opcion;
+        }
+      })
+    );
+  }
 
   CreateQuiz(obj: Quiz) {
     const url = `${environment.urlApi}/cuestionario/save`;
@@ -51,14 +62,4 @@ export class QuizService {
     );
   }
 
-  CreateRegistro(obj: TriedQuiz) {
-    const url = `${environment.urlApi}/registro/save`;
-    return this.http.post(url, obj).pipe(
-      map((response: any) => {
-        if (response.ok) {
-          return response.opcion;
-        }
-      })
-    );
-  }
 }

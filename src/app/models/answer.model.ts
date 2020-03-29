@@ -1,8 +1,8 @@
 
 export class Answer {
-  value: string;
-  status: boolean;
-  optionId: number;
-  triedQuizId: number;
-  answerId: number;
+  id: number;
+  idCuestionarioRegistro:	number;
+  idPregunta:	number;
+  texto:	string;
+  valor:	number;
 }

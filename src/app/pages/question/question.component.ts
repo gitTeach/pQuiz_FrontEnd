@@ -22,17 +22,14 @@ export class QuestionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.question.questionId === undefined) {
+    if (this.question.id === undefined) {
       this.question = new Question();
-      this.question.questionTypeId = 1;
-      this.question.status = '';
-
+      this.question.idTipoPregunta = 1;
     }
   }
 
   addOption() {
     let opt = new QuestionOption();
-    opt.typeOpt = this.question.questionTypeId;
       this.options.push(opt);
       console.log('aass', this.options);
   }
