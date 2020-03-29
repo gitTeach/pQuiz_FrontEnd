@@ -1,3 +1,4 @@
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuestionComponent } from './question/question.component';
 import { CommonModule } from '@angular/common';
@@ -7,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { QuizComponent } from './quiz/quiz.component';
 import { QuizBuilderComponent } from './quiz-builder/quiz-builder.component';
 import { QuestionOptionComponent } from './question-option/question-option.component';
+import { QuizRegisterComponent } from './quiz-register/quiz-register.component';
 
 
 @NgModule({
@@ -14,13 +16,14 @@ import { QuestionOptionComponent } from './question-option/question-option.compo
     CommonModule,
     PagesRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [
     QuizComponent,
     QuizBuilderComponent,
     QuestionComponent,
-    QuestionOptionComponent
+    QuestionOptionComponent,
+    QuizRegisterComponent
   ]
 })
 export class PagesModule { }

@@ -14,6 +14,10 @@ export const navItems: INavData[] = [
     name: 'Crear Test',
     url: '/builder',
     icon: 'icon-puzzle',
+  },
+  {
+    name: 'Tests',
+    url: '/Tests',
   }
 ];
 

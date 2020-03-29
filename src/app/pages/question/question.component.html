@@ -13,13 +13,13 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="description">Texto</label>
-          <input [(ngModel)]="question.text" name="text" class="form-control"
+          <input [(ngModel)]="question.texto" name="text" class="form-control"
           placeholder="Texto ¿? ..." type="text">
         </div>
         <div class="form-group col-md-6">
           <label for="tipo" >Tipo de Pregunta</label>
           <select id="tipoPregunta"
-                  [(ngModel)]="question.questionTypeId"
+                  [(ngModel)]="question.idTipoPregunta"
                   name="questionTypeId"
                   class="form-control"
                   aria-placeholder="Tipo de Pregunta"
@@ -33,7 +33,7 @@
         </div>
         <div class="form-group col-md-12">
           <label for="instruccionesPregunta">Instruciones</label>
-          <input [(ngModel)]="question.instructions" name="instructions" class="form-control"
+          <input [(ngModel)]="question.instrucciones" name="instructions" class="form-control"
            placeholder="Intrucciones" type="text">
         </div>
 
@@ -44,7 +44,7 @@
 
         </div>
 
-        <div *ngIf="question.questionTypeId!==3" class="form-group col-md-1">
+        <div *ngIf="question.idTipoPregunta!==3" class="form-group col-md-1">
           <button class="btn btn-success" (click)="addOption()" ><i class="fa fa-plus"></i></button>
         </div>
 

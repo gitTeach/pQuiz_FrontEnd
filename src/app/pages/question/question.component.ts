@@ -18,7 +18,13 @@ export class QuestionComponent implements OnInit {
   constructor(
     private serv: QuizService
   ) {
-    this.serv.options.subscribe(lista => (this.options = [...lista]));
+    if ( this.question !== undefined) {
+      this.serv
+        .getOpcionByPregunta(this.question.id)
+        .subscribe((response: any) => {
+          this.options = [...response];
+        });
+    }
   }
 
   ngOnInit(): void {

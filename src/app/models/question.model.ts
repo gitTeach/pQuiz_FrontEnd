@@ -11,4 +11,5 @@ export class Question {
   peso:	number;
   rangoMaximo: number;
   rangoMinimo: number;
+  status: string;
 }

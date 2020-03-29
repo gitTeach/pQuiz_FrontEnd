@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
@@ -10,6 +11,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 @NgModule({
   imports: [
     FormsModule,
+    CommonModule,
     DashboardRoutingModule,
     ChartsModule,
     BsDropdownModule,

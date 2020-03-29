@@ -1,5 +1,6 @@
 <div class="animated fadeIn">
-  <div class="row">
+  <!--
+    <div class="row">
     <div class="col-sm-6 col-lg-3">
       <div class="card text-white bg-info">
         <div class="card-body pb-0">
@@ -19,7 +20,7 @@
           [chartType]="lineChart2Type"></canvas>
         </div>
       </div>
-    </div><!--/.col-->
+    </div>
     <div class="col-sm-6 col-lg-3">
       <div class="card text-white bg-primary">
         <div class="card-body pb-0">
@@ -47,7 +48,7 @@
                   [chartType]="lineChart1Type"></canvas>
         </div>
       </div>
-    </div><!--/.col-->
+    </div>
     <div class="col-sm-6 col-lg-3">
       <div class="card text-white bg-warning">
         <div class="card-body pb-0">
@@ -74,7 +75,7 @@
           [chartType]="lineChart3Type"></canvas>
         </div>
       </div>
-    </div><!--/.col-->
+    </div>
     <div class="col-sm-6 col-lg-3">
       <div class="card text-white bg-danger">
         <div class="card-body pb-0">
@@ -101,15 +102,16 @@
           [chartType]="barChart1Type"></canvas>
         </div>
       </div>
-    </div><!--/.col-->
-  </div><!--/.row-->
+    </div>
+  </div> -->
+  <!--
   <div class="card">
     <div class="card-body">
       <div class="row">
         <div class="col-sm-5">
           <h4 class="card-title mb-0">Traffic</h4>
           <div class="small text-muted">November 2017</div>
-        </div><!--/.col-->
+        </div>
         <div class="col-sm-7 d-none d-md-block">
           <button type="button" class="btn btn-primary float-right"><i class="icon-cloud-download"></i></button>
           <div class="btn-group btn-group-toggle float-right mr-3" data-toggle="buttons">
@@ -117,8 +119,8 @@
             <label class="btn btn-outline-secondary" [(ngModel)]="radioModel" btnRadio="Month" id="option2">Month</label>
             <label class="btn btn-outline-secondary" [(ngModel)]="radioModel" btnRadio="Year" id="option3">Year</label>
           </div>
-        </div><!--/.col-->
-      </div><!--/.row-->
+        </div>
+      </div>
       <div class="chart-wrapper" style="height:300px;margin-top:40px;">
         <canvas baseChart class="chart"
         [datasets]="mainChartData"
@@ -169,12 +171,13 @@
       </div>
     </div>
   </div>
-  <!--/.card-->
+-->
   <div class="row">
-    <div class="col-sm-6 col-lg-3">
+
+    <div *ngFor="let register of registers"  class="col-sm-6 col-lg-3">
       <div class="brand-card">
         <div class="brand-card-header bg-facebook">
-          <i class="fa fa-facebook"></i>
+          <i>{{ register.nombre }}</i>
           <div class="chart-wrapper">
             <canvas baseChart class="chart"
             [datasets]="brandBoxChartData1"
@@ -187,95 +190,27 @@
         </div>
         <div class="brand-card-body">
           <div>
-            <div class="text-value">89k</div>
-            <div class="text-uppercase text-muted small">friends</div>
+            <div class="text-value">{{ register.nreg }}</div>
+            <div class="text-uppercase text-muted small">No. Registros</div>
           </div>
           <div>
-            <div class="text-value">459</div>
-            <div class="text-uppercase text-muted small">feeds</div>
+            <div class="text-value">{{ register.prom }}</div>
+            <div class="text-uppercase text-muted small">Promedio Puntos</div>
           </div>
         </div>
       </div>
-    </div><!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="brand-card">
-        <div class="brand-card-header bg-twitter">
-          <i class="fa fa-twitter"></i>
-          <div class="chart-wrapper">
-            <canvas baseChart class="chart"
-            [datasets]="brandBoxChartData2"
-            [labels]="brandBoxChartLabels"
-            [options]="brandBoxChartOptions"
-            [colors]="brandBoxChartColours"
-            [legend]="brandBoxChartLegend"
-            [chartType]="brandBoxChartType"></canvas>
-          </div>
-        </div>
-        <div class="brand-card-body">
-          <div>
-            <div class="text-value">973k</div>
-            <div class="text-uppercase text-muted small">followers</div>
-          </div>
-          <div>
-            <div class="text-value">1.792</div>
-            <div class="text-uppercase text-muted small">tweets</div>
-          </div>
-        </div>
-      </div>
-    </div><!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="brand-card">
-        <div class="brand-card-header bg-linkedin">
-          <i class="fa fa-linkedin"></i>
-          <div class="chart-wrapper">
-            <canvas baseChart class="chart"
-            [datasets]="brandBoxChartData3"
-            [labels]="brandBoxChartLabels"
-            [options]="brandBoxChartOptions"
-            [colors]="brandBoxChartColours"
-            [legend]="brandBoxChartLegend"
-            [chartType]="brandBoxChartType"></canvas>
-          </div>
-        </div>
-        <div class="brand-card-body">
-          <div>
-            <div class="text-value">500+</div>
-            <div class="text-uppercase text-muted small">contacts</div>
-          </div>
-          <div>
-            <div class="text-value">292</div>
-            <div class="text-uppercase text-muted small">feeds</div>
-          </div>
-        </div>
-      </div>
-    </div><!--/.col-->
-    <div class="col-sm-6 col-lg-3">
-      <div class="brand-card">
-        <div class="brand-card-header bg-google-plus">
-          <i class="fa fa-google-plus"></i>
-          <div class="chart-wrapper">
-            <canvas baseChart class="chart"
-            [datasets]="brandBoxChartData4"
-            [labels]="brandBoxChartLabels"
-            [options]="brandBoxChartOptions"
-            [colors]="brandBoxChartColours"
-            [legend]="brandBoxChartLegend"
-            [chartType]="brandBoxChartType"></canvas>
-          </div>
-        </div>
-        <div class="brand-card-body">
-          <div>
-            <div class="text-value">894</div>
-            <div class="text-uppercase text-muted small">followers</div>
-          </div>
-          <div>
-            <div class="text-value">92</div>
-            <div class="text-uppercase text-muted small">circles</div>
-          </div>
-        </div>
-      </div>
-    </div><!--/.col-->
   </div><!--/.row-->
+  <hr>
+  <h6>Pruebas o evaluaciones registradas </h6>
+  <hr>
+  <div *ngFor="let register of tests" class="row">
+  <div class="col-sm-6 col-lg-3">
+      <div class="brand-card">
+
+      </div>
+    </div>
+  </div>
+  <!--
   <div class="row">
     <div class="col-md-12">
       <div class="card">
@@ -292,15 +227,15 @@
                     <br>
                     <strong class="h4">9,123</strong>
                   </div>
-                </div><!--/.col-->
+                </div>
                 <div class="col-sm-6">
                   <div class="callout callout-danger">
                     <small class="text-muted">Recuring Clients</small>
                     <br>
                     <strong class="h4">22,643</strong>
                   </div>
-                </div><!--/.col-->
-              </div><!--/.row-->
+                </div>
+              </div>
               <hr class="mt-0">
               <div class="progress-group mb-4">
                 <div class="progress-group-prepend">
@@ -407,7 +342,7 @@
                   </div>
                 </div>
               </div>
-            </div><!--/.col-->
+            </div>
             <div class="col-sm-6">
               <div class="row">
                 <div class="col-sm-6">
@@ -416,15 +351,15 @@
                     <br>
                     <strong class="h4">78,623</strong>
                   </div>
-                </div><!--/.col-->
+                </div>
                 <div class="col-sm-6">
                   <div class="callout callout-success">
                     <small class="text-muted">Organic</small>
                     <br>
                     <strong class="h4">49,123</strong>
                   </div>
-                </div><!--/.col-->
-              </div><!--/.row-->
+                </div>
+              </div>
               <hr class="mt-0">
               <div class="progress-group">
                 <div class="progress-group-header">
@@ -502,8 +437,8 @@
                   </div>
                 </div>
               </div>
-            </div><!--/.col-->
-          </div><!--/.row-->
+            </div>
+          </div>
           <br>
           <table class="table table-responsive-sm table-hover table-outline mb-0">
             <thead class="thead-light">
@@ -744,6 +679,7 @@
           </table>
         </div>
       </div>
-    </div><!--/.col-->
-  </div><!--/.row-->
+    </div>
+  </div>
+-->
 </div>
